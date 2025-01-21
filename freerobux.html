@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>KietTrumHtml | Hệ Thống Lập Trình</title>
+</head>
+<body style="background-color: ghostwhite;">
+</body>
+<header style="position: fixed; top: 0; left: 0; width: 100%; background-color: white; color: white; text-align: center; height: 70px; z-index: 1000; font-size: 24px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);">  
+
+<img src="https://i.imgur.com/5jzoU6U.jpeg" width="50" height="50" style="position: absolute; top: 11px; left: 70px; border-radius: 15px;">
+</header>
+
+<button class="menu-btn" onclick="toggleMenu()">☰</button>
+<div class="side-menu">
+    <button class="close-btn" onclick="toggleMenu()">X</button> <!-- Button đóng -->
+    <ul>
+ <button onclick="window.location.href = 'freerobux.html';" style="height: 40px; width: 100%; font-size: 19px; color: white; border: none; cursor: pointer; border-radius: 5px; position: absolute; top: 80px; left: 50%; transform: translateX(-50%); background: none; font-style: ; font-weight: bold; border: 2px solid lightgray; border-radius: 10px;">
+  Rút Robux Roblox➡️
+</button>
+
+ <button onclick="window.location.href = 'freefire.html';" style="height: 40px; width: 100%; font-size: 19px; color: white; border: none; cursor: pointer; border-radius: 5px; position: absolute; top: 130px; left: 50%; transform: translateX(-50%); background: none; font-style: ; font-weight: bold; border: 2px solid lightgray; border-radius: 10px;">
+  Rút Kim Cương Free Fire➡️
+</button>
+
+    </ul>
+</div>
+
+<style>
+    .menu-btn {
+        position: fixed;
+        top: 11px;
+        left: 10px;
+        font-size: 30px;
+        background-color: white;
+        color: lightgray;
+        border: 2px solid lightgray;
+        height: 50px; width: 50px;
+        border-radius: 8px;
+        cursor: pointer;
+        z-index: 1200;
+    }
+
+    .menu-btn:hover {
+        background-color: #444;
+    }
+
+    .side-menu {
+        position: fixed;
+        top: 70px;
+        left: -1000px;
+        width: 100%;
+        height: 200px;
+        background-color: #333;
+        color: white;
+        transition: 0.3s;
+        padding-top: 60px;
+        z-index: 10000;
+    
+    }
+    .side-menu.open {
+        left: 0;
+    }
+
+    /* Style cho button đóng */
+    .close-btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 25px;
+        background-color: #333;
+        color: white;
+        border: none;
+        height: 40px; width: 40px;
+        cursor: pointer;
+        border-radius: 5px;
+        border: 2px solid lightgray;
+    }
+
+    .close-btn:hover {
+        background-color: #444;
+    }
+</style>
+
+<script>
+    function toggleMenu() {
+        var menu = document.querySelector('.side-menu');
+        menu.classList.toggle('open');
+    }
+</script>
+
+<div class="frame">
+<select id="color-choice">
+    <option value="red">Chọn Số Robux</option>
+    <option value="blue">550 Robux</option>
+    <option value="green">999 Robux</option>
+    <option value="3300">3300 Robux</option>
+    <option value="8000">8000 Robux</option>
+</select>
+
+<label id="color-label">Chọn Số Robux</label>
+
+
+<style>
+    select {
+        font-size: 16px;
+        padding: 8px;
+        border-radius: 0px;
+        background-color: white;
+        width: 300px;
+        position: absolute;
+        top: 130px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    #color-choice {
+        top: 100px;
+    }
+
+    #custom-choice {
+        top: 150px;
+    }
+
+    label {
+        font-size: 15px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    #color-label {
+        top: 80px;
+    }
+
+    #custom-label {
+        top: 180px;
+    }
+</style>
+
+<script>
+    document.getElementById('color-choice').addEventListener('change', function() {
+        var selectedColor = this.value;
+        var label = document.getElementById('color-label');
+        
+        if (selectedColor === 'red') {
+            label.textContent = "Vui Lòng Chọn";
+        } else if (selectedColor === 'blue') {
+            label.textContent = "Tổng 250.000VND";
+        } else if (selectedColor === '3300') {
+            label.textContent = "Tổng 1.220.000VND";
+        } else if (selectedColor === '8000') {
+            label.textContent = "Tổng 2.200.000";
+        }
+    });
+
+</script>
+
+<input type="text" class="textboxgame" placeholder="Nhập Link Game Pass">
+
+<style>
+    .textboxgame {
+        width: 294px;
+        margin: 138px 0;
+        height: 35px;
+        border: 1px solid black;
+        border-radius: 0px;
+        font-size: 16px;
+    }
+</style>
+
+<input type="text" class="textbox" placeholder="Tên Đăng Nhập">
+<style>
+    .textbox {
+        width: 294px;
+        position: absolute;
+        top: 175px;
+        left: 0%;
+        height: 35px;
+        border: 1px solid black;
+        border-radius: 0px;
+        font-size: 16px;
+    }
+</style>
+
+<input type="text" class="textboxg" placeholder="Mã Giảm Giá">
+
+<style>
+    .textboxg {
+        width: 294px;
+        position: absolute;
+        top: 213px;
+        left: 0%;
+        height: 35px;
+        border: 1px solid black;
+        border-radius: 0px;
+        font-size: 16px;
+    }
+</style>
+
+<button id="open-dialog" style="height: 40px; width: 300px; font-size: 16px; position: absolute; top: 251px; left: 0%; color: yellow; background-color: black;">Rút Robux</button>
+
+<div id="success-dialog" style="
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border: 2px solid #4caf50;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    z-index: 1000;">
+    <div style="font-size: 40px; color: #4caf50;">✓</div>
+    <p style="margin: 10px 0; font-size: 18px;">Thành công</p>
+    <button id="close-dialog" style="
+        margin-top: 10px;
+        padding: 8px 16px;
+        font-size: 16px;
+        color: white;
+        background-color: #4caf50;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;">
+        Đóng
+    </button>
+</div>
+
+<script>
+    const openButton = document.getElementById('open-dialog');
+    const closeButton = document.getElementById('close-dialog');
+    const dialog = document.getElementById('success-dialog');
+
+    openButton.addEventListener('click', () => {
+        dialog.style.display = 'block';
+    });
+
+    closeButton.addEventListener('click', () => {
+        dialog.style.display = 'none';
+    });
+</script>
+
+</div>
+
+<style>
+    .frame {
+        width: 300px;
+        height: 320px;
+        background-color: white;
+        position: absolute;
+        top: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 20px;
+        border: 2px solid lightgray;
+    }
+</style>
+
+
+
+</body>
+</html>
