@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width">
   <title>KietTrumHtml | Hệ Thống Lập Trình</title>
 </head>
-<body style="background-color: ghostwhite;">
+<body style="background-color: black;">
 </body>
 <header style="position: fixed; top: 0; left: 0; width: 100%; background-color: white; color: white; text-align: center; height: 70px; z-index: 1000; font-size: 24px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);">  
 
@@ -91,70 +91,108 @@
 </script>
 
 <div class="frame">
+
+<div id="balanceDisplay" class="balance">Số dư: 0 VND</div>
+
 <select id="color-choice">
-    <option value="red">Chọn Số Robux</option>
-    <option value="blue">550 Robux</option>
-    <option value="green">999 Robux</option>
+    <option value="">Chọn Số Robux</option>
+    <option value="35">35 Robux</option>
+    <option value="550">550 Robux</option>
+    <option value="999">999 Robux</option>
     <option value="3300">3300 Robux</option>
     <option value="8000">8000 Robux</option>
 </select>
 
-<label id="color-label">Chọn Số Robux</label>
+<button id="submit-button">Thanh Toán</button>
 
+<div id="notification" class="notification"></div>
 
 <style>
-    select {
+    .balance {
+        font-size: 16px;
+        color: red;
+        font-weight: bold;
+        position: absolute;
+        top: 0px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: yellow;
+        padding: 5px;
+        border-radius: 5px;
+        width: 200px;
+        height: 20px;
+        text-align: center;
+    }
+
+    #color-choice {
         font-size: 16px;
         padding: 8px;
         border-radius: 0px;
         background-color: white;
         width: 300px;
         position: absolute;
-        top: 130px;
+        top: 50px;
         left: 50%;
         transform: translateX(-50%);
     }
 
-    #color-choice {
-        top: 100px;
-    }
-
-    #custom-choice {
-        top: 150px;
-    }
-
-    label {
-        font-size: 15px;
+    #submit-button {
+        font-size: 16px;
+        padding: 8px;
+        border-radius: 5px;
+        background-color: #4CAF50;
+        width: 300px;
         position: absolute;
+        top: 170px;
         left: 50%;
         transform: translateX(-50%);
     }
 
-    #color-label {
-        top: 80px;
-    }
-
-    #custom-label {
-        top: 180px;
+    #notification {
+        font-size: 14px;
+        color: white;
+        background-color: red;
+        padding: 10px;
+        text-align: center;
+        position: absolute;
+        top: 250px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 200px;
+        border-radius: 5px;
+        display: none;
     }
 </style>
 
 <script>
-    document.getElementById('color-choice').addEventListener('change', function() {
-        var selectedColor = this.value;
-        var label = document.getElementById('color-label');
-        
-        if (selectedColor === 'red') {
-            label.textContent = "Vui Lòng Chọn";
-        } else if (selectedColor === 'blue') {
-            label.textContent = "Tổng 250.000VND";
-        } else if (selectedColor === '3300') {
-            label.textContent = "Tổng 1.220.000VND";
-        } else if (selectedColor === '8000') {
-            label.textContent = "Tổng 2.200.000";
+    let userBalance = parseInt(localStorage.getItem('userBalance')) || 0;
+
+    function updateBalance() {
+        localStorage.setItem('userBalance', userBalance);
+        document.getElementById("balanceDisplay").textContent = "Số Robux: " + userBalance.toLocaleString() + "$";
+    }
+
+    updateBalance();
+
+    document.getElementById('submit-button').addEventListener('click', function() {
+        var selectedRobux = parseInt(document.getElementById('color-choice').value);
+
+        if (selectedRobux && userBalance >= selectedRobux) {
+            userBalance -= selectedRobux;
+            updateBalance();
+            document.getElementById('notification').textContent = "Thanh toán thành công!";
+            document.getElementById('notification').style.backgroundColor = 'green';
+            document.getElementById('notification').style.display = 'block';
+        } else if (selectedRobux) {
+            document.getElementById('notification').textContent = "Số dư không đủ!";
+            document.getElementById('notification').style.backgroundColor = 'red';
+            document.getElementById('notification').style.display = 'block';
+        } else {
+            document.getElementById('notification').textContent = "Vui lòng chọn số Robux!";
+            document.getElementById('notification').style.backgroundColor = 'black';
+            document.getElementById('notification').style.display = 'block';
         }
     });
-
 </script>
 
 <input type="text" class="textboxgame" placeholder="Nhập Link Game Pass">
@@ -162,7 +200,7 @@
 <style>
     .textboxgame {
         width: 294px;
-        margin: 138px 0;
+        margin: 125px 0;
         height: 35px;
         border: 1px solid black;
         border-radius: 0px;
@@ -175,7 +213,7 @@
     .textbox {
         width: 294px;
         position: absolute;
-        top: 175px;
+        top: 88px;
         left: 0%;
         height: 35px;
         border: 1px solid black;
@@ -184,64 +222,33 @@
     }
 </style>
 
-<input type="text" class="textboxg" placeholder="Mã Giảm Giá">
-
-<style>
-    .textboxg {
-        width: 294px;
-        position: absolute;
-        top: 213px;
-        left: 0%;
-        height: 35px;
-        border: 1px solid black;
-        border-radius: 0px;
-        font-size: 16px;
-    }
-</style>
-
-<button id="open-dialog" style="height: 40px; width: 300px; font-size: 16px; position: absolute; top: 251px; left: 0%; color: yellow; background-color: black;">Rút Robux</button>
-
-<div id="success-dialog" style="
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    border: 2px solid #4caf50;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    text-align: center;
-    font-family: Arial, sans-serif;
-    z-index: 1000;">
-    <div style="font-size: 40px; color: #4caf50;">✓</div>
-    <p style="margin: 10px 0; font-size: 18px;">Thành công</p>
-    <button id="close-dialog" style="
-        margin-top: 10px;
-        padding: 8px 16px;
-        font-size: 16px;
-        color: white;
-        background-color: #4caf50;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;">
-        Đóng
-    </button>
-</div>
+<input type="text" id="keyInput" placeholder="Nhập mã key" style="height: 40px; width: 300px; font-size: 16px; text-align: center; border-radius: 5px; border: 1px solid #ccc; position: absolute; top: 500px; left: 50%; transform: translateX(-50%);">
+<button onclick="validateKey()" style="height: 40px; width: 120px; font-size: 16px; background-color: #4CAF50; color: white; border: none; cursor: pointer; border-radius: 5px; position: absolute; top: 550px; left: 50%; transform: translateX(-50%);">
+  Xác nhận
+</button>
 
 <script>
-    const openButton = document.getElementById('open-dialog');
-    const closeButton = document.getElementById('close-dialog');
-    const dialog = document.getElementById('success-dialog');
+    function validateKey() {
+        const validKeys = {
+            "20robux": 20,
+            "10000robux": 10000,
+            "infrobux_10k€": 870000
+        };
 
-    openButton.addEventListener('click', () => {
-        dialog.style.display = 'block';
-    });
+        // Đọc số dư hiện tại từ LocalStorage
+        let userBalance = parseInt(localStorage.getItem("userBalance")) || 0;
 
-    closeButton.addEventListener('click', () => {
-        dialog.style.display = 'none';
-    });
+        const keyInput = document.getElementById("keyInput").value.trim();
+
+        if (validKeys[keyInput]) {
+            // Cộng tiền khi key hợp lệ
+            userBalance += validKeys[keyInput];
+            localStorage.setItem("userBalance", userBalance);
+            alert(`Key hợp lệ! Bạn nhận được ${validKeys[keyInput]} Robux.`);
+        } else {
+            alert("Key không hợp lệ hoặc đã được sử dụng!");
+        }
+    }
 </script>
 
 </div>
@@ -249,7 +256,7 @@
 <style>
     .frame {
         width: 300px;
-        height: 320px;
+        height: 600px;
         background-color: white;
         position: absolute;
         top: 100px;
