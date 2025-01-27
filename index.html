@@ -4,26 +4,20 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>KiettrumHtml | Hệ Thống Lập Trình - Giao Dịch</title>
+  <meta name="description"Kiettrumhtml là hệ thống chia sẻ code website HTML,PHP,PYTHON,C++">
 </head>
 <body>
-<body style="background-color: #F9F7FF;">
+<body style="background-color: #F0F8F5;">
 </body>
 
-<header style="position: fixed; top: 0; left: 0; width: 100%; background-color: white; color: white; text-align: center; height: 55px; font-size: 24px; z-index: 1000; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);"> 
-
-<img src="https://i.imgur.com/nnEKBtM.png" width="30" height="30" style="position: absolute; top: 15px; left: 45px; border-radius: 5px;">
+<header style="position: fixed; top: 0; left: 0; width: 100%; background-color: white; color: white; text-align: center; height: 55px; font-size: 24px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);">  
 </header>
 
 <button class="menu-btn" onclick="toggleMenu()">☰</button>
 <div class="side-menu">
+    
     <ul>
-<button onclick="window.location.href = 'freehosting.html';" style="height: 40px; width: 80%; font-size: 16px; background-color: black; color: white; border: none; cursor: pointer; border-radius: 5px; position: absolute; top: 10px; left: 10%; transform: translateX(-0%); display: flex; flex-direction: column; align-items: center; justify-content: center;">
-  Free Hosting
-</button>
-
-<button onclick="window.location.href = 'supportai.html';" style="height: 40px; width: 80%; font-size: 16px; background-color: black; color: white; border: none; cursor: pointer; border-radius: 5px; position: absolute; top: 60px; left: 10%; transform: translateX(-0%); display: flex; flex-direction: column; align-items: center; justify-content: center;">
-  Support - AI
-</button>
+       
     </ul>
 </div>
 
@@ -34,7 +28,7 @@
         left: 10px;
         font-size: 13px;
         background-color: white;
-        color: black;
+        color:  black;
         border: none;
         height: 30px;
         width: 30px;
@@ -51,170 +45,59 @@
         width: 100%;
         height: 100px;
         background-color: white;
-        color: black;
-        transition: 0s;
+        color: white;
+        transition: 0.3s;
         padding-top: 60px;
         z-index: 9999;
     }
 
     .side-menu.open {
         left: 0;
+
     }
 </style>
 
 <script>
-    const originalPositions = new Map();
-
     function toggleMenu() {
         var menu = document.querySelector('.side-menu');
         menu.classList.toggle('open');
-
-        const allElements = document.querySelectorAll('body > *');
-        let menuTop = parseInt(window.getComputedStyle(menu).top, 10) || 0;
-
-        if (menu.classList.contains('open')) {
-            allElements.forEach(element => {
-                const elementTop = parseInt(window.getComputedStyle(element).top, 10) || 0;
-
-                if (elementTop > menuTop) {
-                    const computedTop = elementTop + menu.offsetHeight;
-                    if (!originalPositions.has(element)) {
-                        originalPositions.set(element, elementTop);
-                    }
-                    element.style.top = computedTop + 'px';
-                }
-            });
-        } else {
-            allElements.forEach(element => {
-                if (originalPositions.has(element)) {
-                    element.style.top = originalPositions.get(element) + 'px';
-                }
-            });
-        }
     }
 </script>
 
-<div class="frame"> <img src="https://i.imgur.com/rgj53fw.jpeg" width="50" height="50" style="position: absolute; top: 10px; left: 50px; border-radius: 55px;">
+<div class="frame">
+<img src="https://i.imgur.com/Iq4Xdv5.jpeg" width="150" height="150" style="position: absolute; top: 5px; left: 24%; border-radius: 5px;">
+<a href="https://www.mediafire.com/file/h23jafow8wmbtl4/moddmenu/file/file.zip/file" target="_blank">
+    <button style="
+        background-color: red; 
+        color: #FFF; 
+        border: none; 
+        border-radius: 5px; 
+        cursor: pointer; 
+        font-size: 16px; 
+        width: 240px; 
+        height: 40px;
+        position: absolute; 
+        
+        top: 250px; 
+        left: 10%; 
+        transform: translate(-0%, -0%);">
+        Tải Xuống
+    </button>
+</a>
 
-<label style="font-size: 20px; color: black; position: absolute; border: 2px solid lightgray; border-radius: 5px; top: 70px; left: 10%; background-color: white; width: 115px; height: 25px;">Hiện Có: 0</label>
+<label style="font-size: 20px; color:  black; font-weight: bold; font-style: ; position: absolute; top: 160px; left: 22%; transform: translateX(0%); white-space: nowrap;">Trở Về Tuổi Thơ</label>
 
-<button onclick="window.location.href = 'phpcode.html';" style="height: 30px; width: 120px; font-size: 14px; color: black; background-color: white; border: none; cursor: pointer; border-radius: 5px; position: absolute; top: 100px; left: 74px; transform: translateX(-50%); border: 2px solid lightgray; border-radius: 5px; font-weight: bold;">
-  Xem Tất Cả ➡️
-</button></div>
+<label style="font-size: 20px; color:  black; font-weight: bold; font-style: ; position: absolute; top: 190px; left: 20%; transform: translateX(0%); white-space: nowrap;">Mod Menu v2 Hot</label>
+</div>
 
 <style>
     .frame {
-        width: 150px;
-        height: 140px;
-        background-color: lightblue;
-        position: absolute;
-        top: 110px;
-        left: 100px;
-        transform: translateX(-50%);
-        border-radius: 20px;
-    }
-</style>
-
-<div class="framepy"> <img src="https://i.imgur.com/Php3y1i.png" width="50" height="50" style="position: absolute; top: 10px; left: 50px; border-radius: 55px;">
-
-<label style="font-size: 20px; color: black; position: absolute; border: 2px solid lightgray; border-radius: 5px; top: 70px; left: 10%; background-color: white; width: 115px; height: 25px;">Hiện Có: 0</label>
-
-<button onclick="window.location.href = 'htmlcode.html';" style="height: 30px; width: 120px; font-size: 14px; color: black; background-color: white; border: none; cursor: pointer; border-radius: 5px; position: absolute; top: 100px; left: 74px; transform: translateX(-50%); border: 2px solid lightgray; border-radius: 5px; font-weight: bold;">
-  Xem Tất Cả ➡️
-</button></div>
-
-<style>
-    .framepy {
-        width: 150px;
-        height: 140px;
-        background-color: lightgreen;
-        position: absolute;
-        top: 110px;
-        left: 257px;
-        transform: translateX(-50%);
-        border-radius: 20px;
-    }
-</style>
-
-<div class="framepb"> <img src="https://i.imgur.com/Bnq2Khf.png" width="50" height="50" style="position: absolute; top: 10px; left: 50px; border-radius: 0px;">
-
-<label style="font-size: 20px; color: black; position: absolute; border: 2px solid lightgray; border-radius: 5px; top: 70px; left: 10%; background-color: white; width: 115px; height: 25px;">Hiện Có: 0</label>
-
-<button onclick="window.location.href = 'c++code.html';" style="height: 30px; width: 120px; font-size: 14px; color: black; background-color: white; border: none; cursor: pointer; border-radius: 5px; position: absolute; top: 100px; left: 74px; transform: translateX(-50%); border: 2px solid lightgray; border-radius: 5px; font-weight: bold;">
-  Xem Tất Cả ➡️
-</button></div>
-
-<style>
-    .framepb {
-        width: 150px;
-        height: 140px;
-        background-color:  lightpink;
-        position: absolute;
-        top: 260px;
-        left: 100px;
-        transform: translateX(-50%);
-        border-radius: 20px;
-    }
-</style>
-
-<div class="framebb"> <img src="https://i.imgur.com/gZm3qtI.jpeg" width="50" height="50" style="position: absolute; top: 10px; left: 50px; border-radius: 55px;">
-
-<label style="font-size: 20px; color: black; position: absolute; border: 2px solid lightgray; border-radius: 5px; top: 70px; left: 10%; background-color: white; width: 115px; height: 25px;">Hiện Có: 0</label>
-
-<button onclick="window.location.href = 'node.jscode.html';" style="height: 30px; width: 120px; font-size: 14px; color: black; background-color: white; border: none; cursor: pointer; border-radius: 5px; position: absolute; top: 100px; left: 74px; transform: translateX(-50%); border: 2px solid lightgray; border-radius: 5px; font-weight: bold;">
-  Xem Tất Cả ➡️
-</button></div>
-
-<style>
-    .framebb {
-        width: 150px;
-        height: 140px;
-        background-color: yellow;
-        position: absolute;
-        top: 260px;
-        left: 257px;
-        transform: translateX(-50%);
-        border-radius: 20px;
-    }
-</style>
-
-<div class="framje"> <img src="https://i.imgur.com/GZnzGWk.png" width="50" height="50" style="position: absolute; top: 10px; left: 50px; border-radius: 55px;">
-
-<label style="font-size: 20px; color: black; position: absolute; border: 2px solid lightgray; border-radius: 5px; top: 70px; left: 10%; background-color: white; width: 115px; height: 25px;">Hiện Có: 0</label>
-
-<button onclick="window.location.href = 'robloxcode.html';" style="height: 30px; width: 120px; font-size: 14px; color: black; background-color: white; border: none; cursor: pointer; border-radius: 5px; position: absolute; top: 100px; left: 74px; transform: translateX(-50%); border: 2px solid lightgray; border-radius: 5px; font-weight: bold;">
-  Xem Tất Cả ➡️
-</button></div>
-
-<style>
-    .framje {
-        width: 150px;
-        height: 140px;
-        background-color: black;
-        position: absolute;
-        top: 410px;
-        left: 100px;
-        transform: translateX(-50%);
-        border-radius: 20px;
-    }
-</style>
-
-<div class="framennn"> <img src="https://i.imgur.com/TDbskDV.png" width="50" height="50" style="position: absolute; top: 10px; left: 50px; border-radius: 55px;">
-
-<label style="font-size: 20px; color: black; position: absolute; border: 2px solid lightgray; border-radius: 5px; top: 70px; left: 10%; background-color: white; width: 115px; height: 25px;">Hiện Có: 0</label>
-
-<button onclick="window.location.href = 'luahtml.html';" style="height: 30px; width: 120px; font-size: 14px; color: black; background-color: white; border: none; cursor: pointer; border-radius: 5px; position: absolute; top: 100px; left: 74px; transform: translateX(-50%); border: 2px solid lightgray; border-radius: 5px; font-weight: bold;">
-  Xem Tất Cả ➡️
-</button></div>
-
-<style>
-    .framennn {
-        width: 150px;
-        height: 140px;
+        width: 300px;
+        height: 300px;
         background-color: white;
         position: absolute;
-        top: 410px;
-        left: 257px;
+        top: 100px;
+        left: 50%;
         transform: translateX(-50%);
         border-radius: 20px;
     }
@@ -223,7 +106,7 @@
 <div class="framegg">
 <label style="font-size: 15px; color: white; position: absolute; top: 100px; left: 0%;">Kiettrumhtml, chuyên cung cấp các mã nguồn chất lượng cao giúp bạn tạo dựng website một cách nhanh chóng và dễ dàng. Dù bạn muốn phát triển một trang web bằng PHP, Python, Lua hay HTML, chúng tôi có đầy đủ tài nguyên và hướng dẫn chi tiết để bạn có thể xây dựng dự án của mình. Tất cả mã nguồn đều được tối ưu hóa, bảo mật và sẵn sàng để triển khai ngay trên môi trường thực tế. Hãy khám phá các lựa chọn</label>
 
-<img src="https://i.imgur.com/nnEKBtM.png" width="80px" height="80px" style="position: absolute; top: 10px; left: 10px; border-radius: 15px;">
+<img src="https://i.imgur.com/6ks7NMq.jpeg" width="80px" height="80px" style="position: absolute; top: 10px; left: 10px; border-radius: 15px;">
 
 <label style="font-size: 20px; color: white; font-weight: bold; font-style: ; position: absolute; top: 270px; left: 30%; transform: translateX(-50%); white-space: nowrap;">Thông Tin Bảo Mật:</label>
 
@@ -234,18 +117,14 @@
 <style>
     .framegg {
         width: 100%;
-        height: 400px;
+        height: 500px;
         background-color: black;
         position: absolute;
-        top: 570px;
+        top: 450px;
         left: 50%;
         transform: translateX(-50%);
         border-radius: 0px;
     }
 </style>
-
-<button id="customButton" style="border: none; border-radius: 8px; width: 150px; height: 45px; background: linear-gradient(45deg, #6a5acd, #00bcd4); color: white; font-size: 16px; font-weight: bold; text-align: center; cursor: pointer; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); position: absolute; top: 60px; left: 30px;" onclick="toggleNoiDung()">Đăng Code</button>
-
-
 </body>
 </html>
