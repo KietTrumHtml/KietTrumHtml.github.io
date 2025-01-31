@@ -1,96 +1,113 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chatbot</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f7f6;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-
-        .chatbox {
-            background-color: white;
-            padding: 20px;
-            width: 450px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .chatbox input {
-            width: 100%;
-            padding: 12px;
-            margin-top: 10px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            font-size: 16px;
-        }
-
-        .chatbox button {
-            width: 100%;
-            padding: 12px;
-            margin-top: 10px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-        .chatbox button:hover {
-            background-color: #0056b3;
-        }
-
-        .chatbox .response {
-            margin-top: 15px;
-            background-color: #f1f1f1;
-            padding: 10px;
-            border-radius: 5px;
-            width: 100%;
-            text-align: left;
-        }
-
-        .response strong {
-            color: #007bff;
-        }
-
-        .response {
-            display: none;
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>KietTrumHtml | Dịch Vụ Lập Trình</title>
 </head>
 <body>
+<body style="background-color: #e0e0e0;">
+</body>
+<header style="position: fixed; top: 0; left: 0; width: 100%; background-color: white; color: white; text-align: center; height: 55px; font-size: 24px; z-index: 1000; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);">
 
-<div class="chatbox">
-    <input type="text" id="userMessage" placeholder="Nhập câu hỏi..." style="width: 100%; max-width: 450px;">
-    <button onclick="getResponse()">Gửi</button>
-    <div id="response" class="response"></div>
+<button class="menu-btn" onclick="toggleMenu()">☰</button>
+<div class="side-menu">
+    <ul>
+<label style="font-size: 20px; color:  white; font-weight: bold; font-style: ; position: absolute; top: 60px; left: 2%; transform: translateX(0%); white-space: nowrap;">Dịch Vụ - Hot</label>
+       <button onclick="window.location.href = 'freehosting.html';" style="height: 40px; width: 216px; font-size: 16px; background-color: whitesmoke; color: grey; border: none; cursor: pointer; border-radius: 0px; position: absolute; top: 100px; left: 0%; transform: translateX(-0%); display: flex; flex-direction: column; align-items: center; justify-content: center;">
+  Dịch Vụ Free Hosting
+</button> 
+<button onclick="window.location.href = 'muamienweb.html';" style="height: 40px; width: 216px; font-size: 16px; background-color: whitesmoke; color: grey; border: none; cursor: pointer; border-radius: 0px; position: absolute; top: 140px; left: 0%; transform: translateX(-0%); display: flex; flex-direction: column; align-items: center; justify-content: center;">
+  Mua Miền Website
+</button>
+    </ul>
 </div>
 
+<style>
+    .menu-btn {
+        position: fixed;
+        top: 15px;
+        left: 10px;
+        font-size: 13px;
+        background-color: white;
+        color: black;
+        border: none;
+        height: 30px;
+        width: 30px;
+        border: 2px solid lightgray;
+        border-radius: 5px;
+        cursor: pointer;
+        z-index: 1000;
+    }
+
+    .side-menu {
+        position: fixed;
+        top: 55px;
+        left: -2050px;
+        width: 60%;
+        height: 100%;
+        background-color: #123993;
+        color: black;
+        transition: 0s;
+        padding-top: 60px;
+        z-index: 9999;
+    }
+
+    .side-menu.open {
+        left: 0;
+    }
+</style>
+
 <script>
-    function getResponse() {
-        const userMessage = document.getElementById("userMessage").value.toLowerCase();
-        const response = document.getElementById("response");
 
-        const responses = {
-            "/getmenu (premiummenu-29kbaknao1tx)": "KEY ĐÃ ĐƯỢC NHẬP",
-            
-        };
+    function toggleMenu() {
+        var menu = document.querySelector('.side-menu');
+        menu.classList.toggle('open');
 
-        response.innerHTML = "<strong>Bot:</strong> " + (responses[userMessage] || responses["default"]);
-        response.style.display = "block";
+        const allElements = document.querySelectorAll('body > *');
+        let menuTop = parseInt(window.getComputedStyle(menu).top, 10) || 0;
+
+        if (menu.classList.contains('open')) {
+            allElements.forEach(element => {
+                const elementTop = parseInt(window.getComputedStyle(element).top, 10) || 0;
+
+                if (elementTop > menuTop) {
+                    const computedTop = elementTop + menu.offsetHeight;
+                    if (!originalPositions.has(element)) {
+                        originalPositions.set(element, elementTop);
+                    }
+                    element.style.top = computedTop + 'px';
+                }
+            });
+        } else {
+            allElements.forEach(element => {
+                if (originalPositions.has(element)) {
+                    element.style.top = originalPositions.get(element) + 'px';
+                }
+            });
+        }
     }
 </script>
+ </header>
 
+<div class="frame">
+<button onclick="window.location.href = 'download-trovetuoitho.html';" style="height: 40px; width: 55%; font-size: 16px; background-color: ghostwhite; color: grey; border: none; cursor: pointer; border-radius: 5px; position: absolute; top: 240px; left: 21%; transform: translateX(-0%); display: flex; flex-direction: column; align-items: center; justify-content: center;">
+  Download
+</button>
+
+ <img src="https://i.imgur.com/iVr57u1.jpeg" width="300" height="210" style="position: absolute; top: 0px; left: 0px; border-radius: 5px;"></div>
+
+<style>
+    .frame {
+        width: 300px;
+        height: 300px;
+        background-color: white;
+        position: absolute;
+        top: 70px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 5px;
+    }
+</style>
 </body>
 </html>
