@@ -1,130 +1,95 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>KiettrumHtml | Hệ Thống Lập Trình - Giao Dịch</title>
-  <meta name="description"Kiettrumhtml là hệ thống chia sẻ code website HTML,PHP,PYTHON,C++">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .chatbox {
+            background-color: white;
+            padding: 20px;
+            width: 450px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .chatbox input {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        .chatbox button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .chatbox button:hover {
+            background-color: #0056b3;
+        }
+
+        .chatbox .response {
+            margin-top: 15px;
+            background-color: #f1f1f1;
+            padding: 10px;
+            border-radius: 5px;
+            width: 100%;
+            text-align: left;
+        }
+
+        .response strong {
+            color: #007bff;
+        }
+
+        .response {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-<body style="background-color: #F0F8F5;">
-</body>
 
-<header style="position: fixed; top: 0; left: 0; width: 100%; background-color: white; color: white; text-align: center; height: 55px; font-size: 24px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);">  
-</header>
-
-<button class="menu-btn" onclick="toggleMenu()">☰</button>
-<div class="side-menu">
-    
-    <ul>
-       
-    </ul>
+<div class="chatbox">
+    <input type="text" id="userMessage" placeholder="Nhập câu hỏi..." style="width: 100%; max-width: 450px;">
+    <button onclick="getResponse()">Gửi</button>
+    <div id="response" class="response"></div>
 </div>
 
-<style>
-    .menu-btn {
-        position: fixed;
-        top: 15px;
-        left: 10px;
-        font-size: 13px;
-        background-color: white;
-        color:  black;
-        border: none;
-        height: 30px;
-        width: 30px;
-        border: 2px solid lightgray;
-        border-radius: 5px;
-        cursor: pointer;
-        z-index: 1000;
-    }
-
-    .side-menu {
-        position: fixed;
-        top: 55px;
-        left: -2050px;
-        width: 100%;
-        height: 100px;
-        background-color: white;
-        color: white;
-        transition: 0.3s;
-        padding-top: 60px;
-        z-index: 9999;
-    }
-
-    .side-menu.open {
-        left: 0;
-
-    }
-</style>
-
 <script>
-    function toggleMenu() {
-        var menu = document.querySelector('.side-menu');
-        menu.classList.toggle('open');
+    function getResponse() {
+        const userMessage = document.getElementById("userMessage").value.toLowerCase();
+        const response = document.getElementById("response");
+
+        const responses = {
+            "/getmenu (Premiummenu-29kbaknao1tx": "KEY ĐÃ ĐƯỢC NHẬP",
+        };
+
+        response.innerHTML = "<strong>Bot:</strong> " + (responses[userMessage] || responses["default"]);
+        response.style.display = "block";
     }
 </script>
 
-<div class="frame">
-<img src="https://i.imgur.com/Iq4Xdv5.jpeg" width="150" height="150" style="position: absolute; top: 5px; left: 24%; border-radius: 5px;">
-<a href="https://www.mediafire.com/file/h23jafow8wmbtl4/moddmenu/file/file.zip/file" target="_blank">
-    <button style="
-        background-color: red; 
-        color: #FFF; 
-        border: none; 
-        border-radius: 5px; 
-        cursor: pointer; 
-        font-size: 16px; 
-        width: 240px; 
-        height: 40px;
-        position: absolute; 
-        
-        top: 250px; 
-        left: 10%; 
-        transform: translate(-0%, -0%);">
-        Tải Xuống
-    </button>
-</a>
-
-<label style="font-size: 20px; color:  black; font-weight: bold; font-style: ; position: absolute; top: 160px; left: 22%; transform: translateX(0%); white-space: nowrap;">Trở Về Tuổi Thơ</label>
-
-<label style="font-size: 20px; color:  black; font-weight: bold; font-style: ; position: absolute; top: 190px; left: 20%; transform: translateX(0%); white-space: nowrap;">Mod Menu v2 Hot</label>
-</div>
-
-<style>
-    .frame {
-        width: 300px;
-        height: 300px;
-        background-color: white;
-        position: absolute;
-        top: 100px;
-        left: 50%;
-        transform: translateX(-50%);
-        border-radius: 20px;
-    }
-</style>
-
-<div class="framegg">
-<label style="font-size: 15px; color: white; position: absolute; top: 100px; left: 0%;">Kiettrumhtml, chuyên cung cấp các mã nguồn chất lượng cao giúp bạn tạo dựng website một cách nhanh chóng và dễ dàng. Dù bạn muốn phát triển một trang web bằng PHP, Python, Lua hay HTML, chúng tôi có đầy đủ tài nguyên và hướng dẫn chi tiết để bạn có thể xây dựng dự án của mình. Tất cả mã nguồn đều được tối ưu hóa, bảo mật và sẵn sàng để triển khai ngay trên môi trường thực tế. Hãy khám phá các lựa chọn</label>
-
-<img src="https://i.imgur.com/6ks7NMq.jpeg" width="80px" height="80px" style="position: absolute; top: 10px; left: 10px; border-radius: 15px;">
-
-<label style="font-size: 20px; color: white; font-weight: bold; font-style: ; position: absolute; top: 270px; left: 30%; transform: translateX(-50%); white-space: nowrap;">Thông Tin Bảo Mật:</label>
-
-<button onclick="window.location.href = 'chinhsachbaomat.html';" style="height: 40px; width: 100%; font-size: 18px; color: white; border: none; cursor: pointer; border-radius: 10px; position: absolute; top: 310px; left: 50%; transform: translateX(-50%); background: none; font-style: ; font-weight: bold; border: 2px solid lightgray;">
- ⬅️ Chính Sách Bảo Mật ➡️
-</button></div>
-
-<style>
-    .framegg {
-        width: 100%;
-        height: 500px;
-        background-color: black;
-        position: absolute;
-        top: 450px;
-        left: 50%;
-        transform: translateX(-50%);
-        border-radius: 0px;
-    }
-</style>
 </body>
 </html>
